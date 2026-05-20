@@ -48,7 +48,7 @@ data_market_share = {
 }
 df_market_share = pd.DataFrame(data_market_share)
 
-# 5. Dữ liệu Hạ tầng người dùng (Mới thêm)
+# 5. Dữ liệu Hạ tầng người dùng
 data_users = {
     'Phân lớp': ['Tổng dân số Việt Nam', 'Người dùng Internet', 'Người mua hàng Online'],
     'Số lượng (Triệu người)': [100, 78, 55],
@@ -58,7 +58,6 @@ df_users = pd.DataFrame(data_users)
 
 
 # --- TẠO GIAO DIỆN CÁC TABS ---
-# Cập nhật thêm Tab 5
 tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "📈 Tăng trưởng (GMV)", 
     "🗺️ Mức độ tập trung", 
