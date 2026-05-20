@@ -62,8 +62,8 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
     "📈 Tăng trưởng (GMV)", 
     "🗺️ Mức độ tập trung", 
     "📊 Tăng trưởng B2C", 
-    "🛒 Thị phần Sàn TMĐT",
-    "👥 Hạ tầng người dùng"
+    "👥 Hạ tầng người dùng",
+    "🛒 Thị phần Sàn TMĐT"
 ])
 
 with tab1:
@@ -120,25 +120,6 @@ with tab3:
     st.plotly_chart(fig_b2c, use_container_width=True)
 
 with tab4:
-    st.header("Thị phần Giá trị Giao dịch các Sàn TMĐT (Cả năm 2024)")
-    st.markdown("**Tổng giá trị giao dịch (GMV): 349,8 Nghìn Tỷ Đồng** *(Nguồn: YouNet ECI)*")
-    
-    col1, col2 = st.columns([2, 1]) 
-    
-    with col1:
-        fig_pie = px.pie(
-            df_market_share, names='Sàn TMĐT', values='Doanh thu (Nghìn tỷ VNĐ)', hole=0.45, color='Sàn TMĐT',
-            color_discrete_map={'Shopee': '#ff5722', 'TikTok Shop': '#000000', 'Lazada': '#0f146d', 'Tiki': '#1a73e8'}
-        )
-        fig_pie.update_traces(textinfo='percent+label', textposition='inside', textfont_size=14)
-        st.plotly_chart(fig_pie, use_container_width=True)
-        
-    with col2:
-        st.write("### Chi tiết doanh thu & Tăng trưởng")
-        st.dataframe(df_market_share, hide_index=True)
-        st.info("💡 **FACT:** Sàn Shopee duy trì vị thế dẫn đầu với thị phần GMV > 60% trong suốt 4 quý năm 2024.")
-
-with tab5:
     st.header("Mức độ thâm nhập của Thương mại điện tử tại Việt Nam")
     st.markdown("Nền tảng khách hàng trẻ, am hiểu công nghệ và thói quen mua sắm trực tuyến ngày càng phổ biến.")
     
@@ -169,3 +150,22 @@ with tab5:
         st.metric(label="Tổng dân số", value="~100 Triệu")
         st.metric(label="Người dùng Internet", value="~78 Triệu", delta="79% Dân số", delta_color="normal")
         st.metric(label="Người mua hàng Online", value="~55 Triệu", delta="70% ND Internet", delta_color="normal")
+
+with tab5:
+    st.header("Thị phần Giá trị Giao dịch các Sàn TMĐT (Cả năm 2024)")
+    st.markdown("**Tổng giá trị giao dịch (GMV): 349,8 Nghìn Tỷ Đồng** *(Nguồn: YouNet ECI)*")
+    
+    col1, col2 = st.columns([2, 1]) 
+    
+    with col1:
+        fig_pie = px.pie(
+            df_market_share, names='Sàn TMĐT', values='Doanh thu (Nghìn tỷ VNĐ)', hole=0.45, color='Sàn TMĐT',
+            color_discrete_map={'Shopee': '#ff5722', 'TikTok Shop': '#000000', 'Lazada': '#0f146d', 'Tiki': '#1a73e8'}
+        )
+        fig_pie.update_traces(textinfo='percent+label', textposition='inside', textfont_size=14)
+        st.plotly_chart(fig_pie, use_container_width=True)
+        
+    with col2:
+        st.write("### Chi tiết doanh thu & Tăng trưởng")
+        st.dataframe(df_market_share, hide_index=True)
+        st.info("💡 **FACT:** Sàn Shopee duy trì vị thế dẫn đầu với thị phần GMV > 60% trong suốt 4 quý năm 2024.")
