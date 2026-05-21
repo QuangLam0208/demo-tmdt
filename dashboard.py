@@ -34,7 +34,7 @@ df_geo = pd.DataFrame(data_geo)
 # 3. Dữ liệu Hạ tầng người dùng
 data_users = {
     'Phân lớp': ['Tổng dân số Việt Nam', 'Người dùng Internet', 'Người mua hàng Online'],
-    'Số lượng (Triệu người)': [100, 78, 55],
+    'Số lượng (Triệu người)': [100, 79, 55],
     'Tỷ lệ thâm nhập': ['100%', '~79% dân số', '~70% người dùng Internet']
 }
 df_users = pd.DataFrame(data_users)
