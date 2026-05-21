@@ -103,7 +103,7 @@ with tab3:
     with col2:
         st.write("### 📌 Tóm tắt chỉ số")
         st.metric(label="Tổng dân số", value="~100 Triệu")
-        st.metric(label="Người dùng Internet", value="~78 Triệu", delta="79% Dân số", delta_color="normal")
+        st.metric(label="Người dùng Internet", value="~79 Triệu", delta="79% Dân số", delta_color="normal")
         st.metric(label="Người mua hàng Online", value="~55 Triệu", delta="70% ND Internet", delta_color="normal")
 
 with tab4:
